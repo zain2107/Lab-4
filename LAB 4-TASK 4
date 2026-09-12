@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+	int membership_type,time_slot;
+	float base_fee, final_fee;
+	
+	printf("Enter your membership type (1 = Student, 2 = Regular, 3 = Senior citizen): \n");
+	scanf("%d", &membership_type);
+	
+	printf("Enter your time slot (1 = Morning , 2 = Evening) \n");
+	scanf("%d" , &time_slot);
+	
+	switch(membership_type)
+	{
+		case 1:
+			base_fee = 2000;
+			break;
+		
+		case 2:
+			base_fee = 3500;
+			break;
+			
+		case 3:
+			base_fee = 2500;
+			break;	
+			
+		default:
+			printf("Invalid membership type entered! \n");
+			return 1;	
+	}
+	
+	switch(time_slot)
+	{
+		case 1:
+			final_fee = base_fee -(base_fee * 0.15);
+			break ;
+			
+		case 2:
+			final_fee = base_fee;
+			break ;
+				
+		default:
+			printf("Invalid time slot entered! \n");
+			return 1;
+					
+	}
+	
+	printf("The final monthly fee is: Rs. %.2f \n", final_fee);
+
+return 0;
+}
