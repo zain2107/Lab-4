@@ -1,0 +1,52 @@
+#include<stdio.h>
+int main()
+{
+	int plan_choice,minutes_used,extra_minutes;
+	float total_bill;
+	
+	printf("Enter plan choice(1,2,3, or 4): \n");
+	scanf("%d",&plan_choice);
+	
+	switch(plan_choice){
+		case 1:
+			printf("Enter minutes used:");
+			scanf("%d",&minutes_used);
+			
+			total_bill=500;
+			if(minutes_used>1000){
+				extra_minutes=minutes_used - 1000;
+				total_bill +=(extra_minutes*2.0);
+			}
+			break;
+			
+		case 2:
+			printf("Enter minutes used:");
+			scanf("%d",&minutes_used);
+			
+			total_bill=800;
+			if(minutes_used>2000){
+				extra_minutes=minutes_used - 2000;
+				total_bill +=(extra_minutes*2.0);
+			}
+			break;
+			
+		case 3:
+		    total_bill= 1200;
+			break;
+			
+		case 4:
+			printf("Enter minutes used:");
+			scanf("%d",&minutes_used);
+			
+			total_bill=minutes_used*1.0;
+			break;
+			
+		default:
+		   printf("Invalid plan choice entered!:");
+		   return 1;	
+	}
+	printf("The total bill is: Rs. %.2f \n", total_bill);
+	
+	return 0;
+	
+}
