@@ -1,0 +1,44 @@
+#include<stdio.h>
+int main()
+{
+	int zone;
+	float speed,limit;
+	
+	printf("Enter zone(1=School zone, 2= highway,3= Residential area):\n");
+	scanf("%d",&zone);	
+	
+	printf("Enter driver speed(km/h): \n");
+	scanf("%f",&speed);
+	
+	switch(zone)
+	{
+		case 1:
+			limit=30;
+			break;
+		
+		case 2:
+			limit=100;
+			break;
+		
+		case 3:
+			limit=50;
+			break;	
+			
+		default:
+		  printf("Invalid zone entered!\n");
+		return 1;  	
+	}
+	
+	if(speed>limit){
+		float fine=1000;
+		if((speed-limit)>20){
+			fine*=2;
+		}
+		printf("Fine amount: Rs. %.2f \n",fine);
+	}
+	else{
+		printf("No violation.Fine amount:Rs 0.00 \n");
+	}
+	return 0;
+	
+}
