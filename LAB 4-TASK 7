@@ -1,0 +1,47 @@
+#include <stdio.h>
+int main() 
+{
+    int policy_status;
+    float vehicle_age, claim_amount, approved_amount;
+
+    printf("Enter policy status (1 for active, 0 for inactive): \n ");
+    scanf("%d", &policy_status);
+
+    printf("Enter vehicle age (in years): \n");
+    scanf("%f", &vehicle_age);
+
+    printf("Enter claim amount (Rs.): \n");
+    scanf("%f", &claim_amount);
+
+    if (policy_status == 1 && claim_amount <= 500000) {
+        
+        if (vehicle_age < 10) {
+            approved_amount = claim_amount;
+            printf("\nClaim Status: Approved (100%%)\n");
+            printf("Approved Amount: Rs. %.2f\n", approved_amount);
+        }
+        
+        else if (vehicle_age >= 10 && vehicle_age <= 15) {
+            approved_amount = claim_amount * 0.50;
+            printf("\nClaim Status: Approved (50%%)\n");
+            printf("Approved Amount: Rs. %.2f\n", approved_amount);
+        }
+        
+        else {
+            printf("\nClaim Status: Rejected (Vehicle age exceeds 15 years)\n");
+        }
+        
+    } 
+	    else {
+    	
+        printf("\nClaim Status: Rejected\n");
+        if (policy_status != 1) {
+            printf("Reason: Policy is inactive.\n");
+        }
+        if (claim_amount > 500000) {
+            printf("Reason: Claim amount exceeds Rs. 500,000 limit.\n");
+        }
+    }
+
+    return 0;
+}
