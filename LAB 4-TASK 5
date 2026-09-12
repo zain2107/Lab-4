@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+	int num_people;
+	float total_weight;
+	
+	printf("Enter the number of people : \n");
+	scanf("%d",&num_people );
+	
+	printf("Enter the total combined weight(in kg): \n");
+	scanf("%f",&total_weight  );
+	
+	
+	if(total_weight > 1000 && num_people > 10 ){
+		printf("Denied entry: overweight and exceeds the max people limit! \n");
+	}
+	
+	else if(total_weight > 1000){
+			printf("Denied entry due to overweight! \n");
+	}
+	
+	else if(num_people > 10){
+		printf("Denied entry due to exceeding the maximum people limit! \n");
+	}
+	
+	else{
+		printf("Elevator can operate normally. \n");
+return 0;
+	}
+	
+}
