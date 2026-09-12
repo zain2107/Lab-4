@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{
+	int account_type;
+	float balance,interest_rate,annual_interest;
+	
+	printf("Enter account type(1 = savings, 2 = Current , 3= Fixed deposit): \n");
+	scanf("%d",&account_type);
+	
+	printf("Enter account balance:");
+	scanf("%f", &balance);
+	
+	switch(account_type)
+	{
+		case 1:
+			if(balance>100000)
+			{
+				interest_rate=0.04;
+			}
+			else{
+				interest_rate=0.02;
+			}
+		    break;
+			
+		case 2:
+		     interest_rate=0.0;
+		    break;	
+		 
+		case 3:
+			interest_rate=0.08;
+			break;
+		 
+	}
+	
+	annual_interest= balance * interest_rate;
+	
+	printf("Annual interest rate is %.2f \n", annual_interest);
+  return 0;
+}
