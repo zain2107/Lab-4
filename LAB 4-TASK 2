@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	float test_score, fsc_percentage, combined_score;
+	
+	printf("Enter your entry test score and FSC percentage \n");
+	scanf("%f %f", &test_score, &fsc_percentage);
+	
+	combined_score= (0.5* test_score) + (0.5 * fsc_percentage);
+	
+	if(combined_score >= 80)
+	{
+		printf("You got addmission in computer science \n");
+	}
+	
+	else if(combined_score >=65 && combined_score <=79)
+	{
+		printf("You got addmission in software engineering \n");
+	}
+	
+		else if(combined_score >=50 && combined_score <=64 )
+	{
+		printf("You got addmission in Information Technology \n");
+	}
+	
+	else
+	{
+		printf("Rejected");
+	}
+	return 0;
+	
+}
