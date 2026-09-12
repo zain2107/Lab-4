@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+	int bill_amount,hour_of_visit,membership;
+	float final_bill,discount;
+	
+	printf("Enter the bill amount:\n");
+	scanf("%d",&bill_amount);
+	
+	printf("Enter the hour of visit:\n");
+	scanf("%d",&hour_of_visit);
+	
+	printf("Enter the membership status (1= Yes, 0= No):\n");
+	scanf("%d",&membership);
+	
+	if(hour_of_visit >=15 && hour_of_visit<=17){
+		discount += 0.20;
+	}
+	
+	if(membership==1){
+		discount += 0.10;
+	}
+	
+	if(discount > 0.25){
+		discount = 0.25;
+	}
+	
+	final_bill = bill_amount - (bill_amount*discount);
+	
+	printf("Total discount applied is %.2f%% \n",discount);
+	printf("The final bill is %.2f",final_bill);
+	return 0;
+	
+}
