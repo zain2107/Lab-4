@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int heart_rate;
+	float temp;
+	
+	printf("Enter heart rate and temperature: \n");
+	scanf("%d %f",&heart_rate,&temp);
+	
+	if(heart_rate > 120 || temp >39)
+	{
+		printf("Critical - Immediate Attention. \n");
+	}
+	
+	else if((heart_rate >= 100 && heart_rate <= 120 ) && (temp >= 37.5 && temp <= 39 ))
+	{
+		printf("Urgent. \n");
+	
+	}
+	else{
+		printf("Normal - Wait in Queue.");
+	}
+	return 0;
+}
